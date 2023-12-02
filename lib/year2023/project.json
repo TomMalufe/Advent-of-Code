@@ -1,7 +1,7 @@
 {
-  "name": "year2022-day01",
+  "name": "year2023",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "year2022/day01/src",
+  "sourceRoot": "lib/src",
   "prefix": "advent",
   "tags": [],
   "projectType": "library",
@@ -10,17 +10,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "year2022/day01/jest.config.ts"
+        "jestConfig": "lib/jest.config.ts"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "year2022/day01/**/*.ts",
-          "year2022/day01/**/*.html"
-        ]
+        "lintFilePatterns": ["lib/**/*.ts", "lib/**/*.html"]
       }
     }
   }
