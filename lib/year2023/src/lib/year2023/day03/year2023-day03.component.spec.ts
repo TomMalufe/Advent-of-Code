@@ -4,16 +4,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
-import { Year2023Day01Component } from './year2023-day01.component';
+import { Year2023Day03Component } from './year2023-day03.component';
 
-describe('Year2022Day01Component', () => {
-  let component: Year2023Day01Component;
-  let fixture: ComponentFixture<Year2023Day01Component>;
+describe('Day02Component', () => {
+  let component: Year2023Day03Component;
+  let fixture: ComponentFixture<Year2023Day03Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        Year2023Day01Component,
+        Year2023Day03Component,
         CommonModule,
         MatButtonModule,
         MatFormFieldModule,
@@ -22,7 +22,7 @@ describe('Year2022Day01Component', () => {
       providers: [provideNoopAnimations()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Year2023Day01Component);
+    fixture = TestBed.createComponent(Year2023Day03Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

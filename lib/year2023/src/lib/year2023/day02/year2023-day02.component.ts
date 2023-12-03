@@ -22,8 +22,8 @@ interface Game {
   selector: 'advent-year2023-day02',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatFormFieldModule, MatInputModule],
-  templateUrl: './year2023-day02.component.html',
-  styleUrl: './year2023-day02.component.scss',
+  templateUrl: '../day-template.component.html',
+  styleUrl: '../day-template.component.scss',
 })
 export class Year2023Day02Component {
   result1 = '';

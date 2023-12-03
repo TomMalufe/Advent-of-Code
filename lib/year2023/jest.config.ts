@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
   displayName: 'year2023',
-  preset: '../jest.preset.js',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../coverage/lib',
+  coverageDirectory: '../../coverage/lib',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

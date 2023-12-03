@@ -8,8 +8,8 @@ import { sumAll } from '../utils';
   selector: 'advent-year2023-day01',
   standalone: true,
   imports: [CommonModule, MatInputModule, MatButtonModule],
-  templateUrl: './year2023-day01.component.html',
-  styleUrl: './year2023-day01.component.scss',
+  templateUrl: '../day-template.component.html',
+  styleUrl: '../day-template.component.scss',
 })
 export class Year2023Day01Component {
   result1 = '';

@@ -1,7 +1,7 @@
 {
   "name": "year2023",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "lib/src",
+  "sourceRoot": "lib/year2023/src",
   "prefix": "advent",
   "tags": [],
   "projectType": "library",
@@ -10,7 +10,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "lib/jest.config.ts"
+        "jestConfig": "lib/year2023/jest.config.ts"
       }
     },
     "lint": {
