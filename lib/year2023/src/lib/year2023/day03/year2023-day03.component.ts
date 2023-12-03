@@ -22,17 +22,20 @@ export class Year2023Day03Component {
   result2 = '';
 
   processInput(value: string): void {
-    let lines = value.split('\n');
+    this.result1 = '' + this.testCase(value);
+    this.result2 = '';
+  }
+
+  testCase(input: string): number {
+    let lines = input.split('\n');
     const blankLine = ''.padEnd(lines[0].length, '.');
     lines = [blankLine, ...lines, blankLine];
 
     const result: PartNumber[] = this.findPartNumbers(
       lines.map((it) => it + '*')
     );
-    console.dir(result);
 
-    this.result1 = '' + sumAll(result.map((it) => it.number));
-    this.result2 = '';
+    return sumAll(result.map((it) => it.number));
   }
 
   findPartNumbers(lines: string[]): PartNumber[] {
@@ -61,7 +64,7 @@ export class Year2023Day03Component {
         if (symbol) {
           result.push({ number: Number.parseInt(partNumberCandidate), symbol });
         }
-        numberIndex += partNumberCandidate.length - 1;
+        numberIndex += partNumberCandidate.length;
       }
     }
     return result;

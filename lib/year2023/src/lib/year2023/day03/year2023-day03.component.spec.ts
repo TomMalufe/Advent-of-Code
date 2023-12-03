@@ -30,4 +30,75 @@ describe('Day02Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should correctly parse the given test case', () => {
+    expect(
+      component.testCase(
+        `467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..`
+      )
+    ).toEqual(4361);
+  });
+  it('should correctly parse the given test case', () => {
+    expect(
+      component.testCase(
+        `12.......*..
++.........34
+.......-12..
+..78........
+..*....60...
+78..........
+.......23...
+....90*12...
+............
+2.2......12.
+.*.........*
+1.1.......56`
+      )
+    ).toEqual(413);
+  });
+  it('should correctly parse the given test case', () => {
+    expect(
+      component.testCase(
+        `12.......*..
++.........34
+.......-12..
+..78........
+..*....60...
+78.........9
+.5.....23..$
+8...90*12...
+............
+2.2......12.
+.*.........*
+1.1..503+.56`
+      )
+    ).toEqual(925);
+  });
+  it('should correctly parse the given test case', () => {
+    expect(
+      component.testCase(
+        `........
+.24..4..
+......*.`
+      )
+    ).toEqual(4);
+  });
+  it('should correctly parse the given test case', () => {
+    expect(
+      component.testCase(
+        `....................
+..-52..52-..52..52..
+..................-.`
+      )
+    ).toEqual(156);
+  });
 });
