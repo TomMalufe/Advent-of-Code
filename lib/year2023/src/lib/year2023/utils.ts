@@ -15,3 +15,7 @@ export const wrapTag = (
   source.slice(start, start + end) +
   tagClose +
   source.slice(start + end);
+
+export const regExToArray = (
+  itt: IterableIterator<RegExpMatchArray>
+): Array<string> => Array.from(itt, (x) => x[0]);
