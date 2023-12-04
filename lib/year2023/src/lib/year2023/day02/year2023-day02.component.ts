@@ -78,14 +78,6 @@ export class Year2023Day02Component {
     return { id, sets };
   }
 
-  /**
-   * Determine which games would have been possible if the bag had been loaded with only
-   * * 12 red cubes,
-   * * 13 green cubes, and
-   * * 14 blue cubes.
-   * What is the sum of the IDs of those games?
-   * @param inputLine
-   */
   filterV1 = (item: Game) =>
     item.sets.every((it) => it.red <= 12 && it.green <= 13 && it.blue <= 14);
 

@@ -4,9 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { TEST_CASES } from './test-cases';
 import { Year2023Day03Component } from './year2023-day03.component';
 
-describe('Day02Component', () => {
+describe('Day03Component', () => {
   let component: Year2023Day03Component;
   let fixture: ComponentFixture<Year2023Day03Component>;
 
@@ -31,74 +32,89 @@ describe('Day02Component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should correctly parse the given test case', () => {
-    expect(
-      component.testCase(
-        `467..114..
-...*......
-..35..633.
-......#...
-617*......
-.....+.58.
-..592.....
-......755.
-...$.*....
-.664.598..`
-      )
-    ).toEqual(4361);
+  describe('testCase1', () => {
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[0].input)).toEqual(
+        TEST_CASES[0].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[1].input)).toEqual(
+        TEST_CASES[1].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[2].input)).toEqual(
+        TEST_CASES[2].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[3].input)).toEqual(
+        TEST_CASES[3].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[4].input)).toEqual(
+        TEST_CASES[4].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[5].input)).toEqual(
+        TEST_CASES[5].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[6].input)).toEqual(
+        TEST_CASES[6].expected
+      );
+    });
+    it('should correctly parse the given test case', () => {
+      expect(component.testCase(TEST_CASES[7].input)).toEqual(
+        TEST_CASES[7].expected
+      );
+    });
   });
-  it('should correctly parse the given test case', () => {
-    expect(
-      component.testCase(
-        `12.......*..
-+.........34
-.......-12..
-..78........
-..*....60...
-78..........
-.......23...
-....90*12...
-............
-2.2......12.
-.*.........*
-1.1.......56`
-      )
-    ).toEqual(413);
-  });
-  it('should correctly parse the given test case', () => {
-    expect(
-      component.testCase(
-        `12.......*..
-+.........34
-.......-12..
-..78........
-..*....60...
-78.........9
-.5.....23..$
-8...90*12...
-............
-2.2......12.
-.*.........*
-1.1..503+.56`
-      )
-    ).toEqual(925);
-  });
-  it('should correctly parse the given test case', () => {
-    expect(
-      component.testCase(
-        `........
-.24..4..
-......*.`
-      )
-    ).toEqual(4);
-  });
-  it('should correctly parse the given test case', () => {
-    expect(
-      component.testCase(
-        `....................
-..-52..52-..52..52..
-..................-.`
-      )
-    ).toEqual(156);
+
+  describe('testCase2', () => {
+    it('should correctly parse test case 0', () => {
+      expect(component.testCase2(TEST_CASES[0].input)).toEqual(
+        TEST_CASES[0].expected
+      );
+    });
+    it('should correctly parse test case 1', () => {
+      expect(component.testCase2(TEST_CASES[1].input)).toEqual(
+        TEST_CASES[1].expected
+      );
+    });
+    it('should correctly parse test case 2', () => {
+      expect(component.testCase2(TEST_CASES[2].input)).toEqual(
+        TEST_CASES[2].expected
+      );
+    });
+    it('should correctly parse test case 3', () => {
+      expect(component.testCase2(TEST_CASES[3].input)).toEqual(
+        TEST_CASES[3].expected
+      );
+    });
+    it('should correctly parse test case 4', () => {
+      expect(component.testCase2(TEST_CASES[4].input)).toEqual(
+        TEST_CASES[4].expected
+      );
+    });
+    it('should correctly parse test case 5', () => {
+      expect(component.testCase2(TEST_CASES[5].input)).toEqual(
+        TEST_CASES[5].expected
+      );
+    });
+    it('should correctly parse test case 6', () => {
+      expect(component.testCase2(TEST_CASES[6].input)).toEqual(
+        TEST_CASES[6].expected
+      );
+    });
+    it('should correctly parse test case 7', () => {
+      expect(component.testCase2(TEST_CASES[7].input)).toEqual(
+        TEST_CASES[7].expected
+      );
+    });
   });
 });
