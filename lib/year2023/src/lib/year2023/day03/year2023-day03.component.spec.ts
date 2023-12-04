@@ -73,6 +73,11 @@ describe('Day03Component', () => {
         TEST_CASES[7].expected
       );
     });
+    it('should correctly parse test case 8', () => {
+      expect(component.testCase(TEST_CASES[8].input)).toEqual(
+        TEST_CASES[8].expected
+      );
+    });
   });
 
   describe('testCase2', () => {
@@ -114,6 +119,11 @@ describe('Day03Component', () => {
     it('should correctly parse test case 7', () => {
       expect(component.testCase2(TEST_CASES[7].input)).toEqual(
         TEST_CASES[7].expected
+      );
+    });
+    it('should correctly parse test case 8', () => {
+      expect(component.testCase2(TEST_CASES[8].input)).toEqual(
+        TEST_CASES[8].expected
       );
     });
   });

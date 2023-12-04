@@ -31,9 +31,7 @@ export class Year2023Day03Component {
   }
 
   testCase(input: string): number {
-    let lines = input
-      .split('\n')
-      .map((it, index, array) => it + (index === array.length - 1 ? '' : '*')); // Add back in fake new lines
+    let lines = input.split('\n');
     const blankLine = ''.padEnd(lines[0].length, '.');
     lines = [blankLine, ...lines, blankLine];
 
@@ -109,22 +107,17 @@ export class Year2023Day03Component {
     const found: string[] = [];
     const findSymbol = (_index: number, _length: number): boolean =>
       (_index > lineLength &&
-        /[^\d.]/.test(
+        /[^\d.\n]/.test(
           input.slice(
-            _index - lineLength - (_index % lineLength !== 0 ? 1 : 0),
+            _index - lineLength - 1,
             _index - lineLength + _length + 1
           )
         )) ||
-      /[^\d.]/.test(
-        input.slice(
-          _index - (_index % lineLength !== 0 ? 1 : 0),
-          _index + _length + 1
-        )
-      ) ||
+      /[^\d.\n]/.test(input.slice(_index - 1, _index + _length + 1)) ||
       (_index < input.length - lineLength &&
-        /[^\d.]/.test(
+        /[^\d.\n]/.test(
           input.slice(
-            _index + lineLength - (_index % lineLength !== 0 ? 1 : 0),
+            _index + lineLength - 1,
             _index + lineLength + _length + 1
           )
         ));
