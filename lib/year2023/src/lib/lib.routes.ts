@@ -10,9 +10,21 @@ export const year2023Routes: Route[] = [
     component: Year2023Component,
     children: [
       { path: '', redirectTo: 'day01', pathMatch: 'full' },
-      { path: 'day01', component: Year2023Day01Component },
-      { path: 'day02', component: Year2023Day02Component },
-      { path: 'day03', component: Year2023Day03Component },
+      {
+        path: 'day01',
+        component: Year2023Day01Component,
+        data: { pathName: 'Year2023 - Day01' },
+      },
+      {
+        path: 'day02',
+        component: Year2023Day02Component,
+        data: { pathName: 'Year2023 - Day02' },
+      },
+      {
+        path: 'day03',
+        component: Year2023Day03Component,
+        data: { pathName: 'Year2023 - Day03' },
+      },
     ],
   },
 ];

@@ -16,7 +16,7 @@ interface PartNumber {
   selector: 'advent-year2023-day03',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatFormFieldModule, MatInputModule],
-  templateUrl: './day03.component.html',
+  templateUrl: './year2023-day03.component.html',
   styleUrl: '../day-template.component.scss',
 })
 export class Year2023Day03Component {
