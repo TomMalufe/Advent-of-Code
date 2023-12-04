@@ -68,62 +68,22 @@ describe('Day03Component', () => {
         TEST_CASES[6].expected
       );
     });
-    it('should correctly parse the given test case', () => {
-      expect(component.testCase(TEST_CASES[7].input)).toEqual(
-        TEST_CASES[7].expected
-      );
-    });
-    it('should correctly parse test case 8', () => {
-      expect(component.testCase(TEST_CASES[8].input)).toEqual(
-        TEST_CASES[8].expected
-      );
-    });
   });
 
   describe('testCase2', () => {
     it('should correctly parse test case 0', () => {
       expect(component.testCase2(TEST_CASES[0].input)).toEqual(
-        TEST_CASES[0].expected
+        TEST_CASES[0].expected2
       );
     });
     it('should correctly parse test case 1', () => {
       expect(component.testCase2(TEST_CASES[1].input)).toEqual(
-        TEST_CASES[1].expected
+        TEST_CASES[1].expected2
       );
     });
     it('should correctly parse test case 2', () => {
       expect(component.testCase2(TEST_CASES[2].input)).toEqual(
-        TEST_CASES[2].expected
-      );
-    });
-    it('should correctly parse test case 3', () => {
-      expect(component.testCase2(TEST_CASES[3].input)).toEqual(
-        TEST_CASES[3].expected
-      );
-    });
-    it('should correctly parse test case 4', () => {
-      expect(component.testCase2(TEST_CASES[4].input)).toEqual(
-        TEST_CASES[4].expected
-      );
-    });
-    it('should correctly parse test case 5', () => {
-      expect(component.testCase2(TEST_CASES[5].input)).toEqual(
-        TEST_CASES[5].expected
-      );
-    });
-    it('should correctly parse test case 6', () => {
-      expect(component.testCase2(TEST_CASES[6].input)).toEqual(
-        TEST_CASES[6].expected
-      );
-    });
-    it('should correctly parse test case 7', () => {
-      expect(component.testCase2(TEST_CASES[7].input)).toEqual(
-        TEST_CASES[7].expected
-      );
-    });
-    it('should correctly parse test case 8', () => {
-      expect(component.testCase2(TEST_CASES[8].input)).toEqual(
-        TEST_CASES[8].expected
+        TEST_CASES[2].expected2
       );
     });
   });

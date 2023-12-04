@@ -104,38 +104,51 @@ export class Year2023Day03Component {
   testCase2(input: string): number {
     const lineLength = input.indexOf('\n') + 1;
     let index = 0;
-    const found: string[] = [];
-    const findSymbol = (_index: number, _length: number): boolean =>
-      (_index > lineLength &&
-        /[^\d.\n]/.test(
-          input.slice(
-            _index - lineLength - 1,
-            _index - lineLength + _length + 1
-          )
-        )) ||
-      /[^\d.\n]/.test(input.slice(_index - 1, _index + _length + 1)) ||
-      (_index < input.length - lineLength &&
-        /[^\d.\n]/.test(
-          input.slice(
-            _index + lineLength - 1,
-            _index + lineLength + _length + 1
-          )
-        ));
+    let found: number[] = [];
+
+    const findNumbersNearIndex = (_index: number): string[] => {
+      let start,
+        end = 0;
+      if (/\d/.test(input.slice(_index - 1, _index + 2))) {
+        start = _index - 1;
+        while (start > 0 && /\d/.test(input.charAt(start))) start--;
+        end = _index + 1;
+        while (end < input.length && /\d/.test(input.charAt(end))) end++;
+        return Array.from(
+          input.slice(start, end).matchAll(/\d+/g),
+          (x) => x[0]
+        );
+      }
+      return [];
+    };
 
     let step = 0;
-    while ((step = input.slice(index).search(/(\d+|\*)/)) !== -1) {
+    while ((step = input.slice(index).search(/\*/)) !== -1) {
       index += step;
-      if (input.charAt(index) === '*') {
-        index++;
-      } else {
-        const partNumber = input.slice(index).match(/\d+/)![0];
-        if (findSymbol(index, partNumber.length)) {
-          found.push(partNumber);
-        }
-        index += partNumber.length;
+      let searchResult: string[] = [];
+
+      if (index > lineLength) {
+        searchResult = findNumbersNearIndex(index - lineLength);
       }
+
+      searchResult = searchResult.concat(findNumbersNearIndex(index));
+
+      if (index < input.length - lineLength) {
+        searchResult = searchResult.concat(
+          findNumbersNearIndex(index + lineLength)
+        );
+      }
+      console.log('search result', searchResult);
+
+      if (searchResult.length > 1) {
+        found.push(
+          searchResult.reduce((prev, cur) => prev * Number.parseInt(cur), 1)
+        );
+      }
+
+      index++;
     }
 
-    return sumAll(found.map((it) => Number.parseInt(it)));
+    return sumAll(found);
   }
 }
