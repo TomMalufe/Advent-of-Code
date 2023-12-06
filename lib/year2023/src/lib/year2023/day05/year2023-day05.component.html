@@ -1,0 +1,24 @@
+<mat-form-field>
+  <label>Puzzle Input</label>
+  <textarea matInput #input1></textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="processInput(input1.value)">
+  Submit
+</button>
+
+@for (result of results; track result; let idx = $index) {
+<div>
+  <label>Output #{{ idx }}</label>
+  <span>{{ result }}</span>
+</div>
+}
+
+<mat-progress-spinner
+  class="example-margin"
+  color="primary"
+  mode="determinate"
+  [value]="(progress$ | async) || 0"
+>
+</mat-progress-spinner>
+<div>Duration: {{ duration$ | async }}</div>
+<div>Remaining: {{ timeRemaining$ | async }}</div>
