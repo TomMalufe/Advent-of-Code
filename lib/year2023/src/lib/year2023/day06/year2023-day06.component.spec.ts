@@ -30,4 +30,26 @@ describe('Year2022Day06Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  /**
+   * Time:      7  15   30
+   * Distance:  9  40  200
+   */
+  it('should find 4 options', () => {
+    expect(component.countWinningDuration(7, 9)).toEqual(4);
+  });
+
+  it('should find 8 options', () => {
+    expect(component.countWinningDuration(15, 40)).toEqual(8);
+  });
+
+  it('should find 9 options', () => {
+    expect(component.countWinningDuration(30, 200)).toEqual(9);
+  });
+
+  it('Process test input', () => {
+    component.processInput(`Time:      7  15   30
+Distance:  9  40  200`);
+    expect(component.result1).toEqual('288');
+  });
 });
