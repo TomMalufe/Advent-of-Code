@@ -1,3 +1,4 @@
+import { regExToArray } from '@advent/shared';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,7 +18,6 @@ import {
   switchMap,
   takeUntil,
 } from 'rxjs';
-import { regExToArray } from '../utils';
 
 export type Source =
   | 'seed'

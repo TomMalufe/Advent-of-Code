@@ -1,8 +1,8 @@
+import { regExToArray } from '@advent/shared';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { regExToArray } from '../utils';
 
 @Component({
   selector: 'advent-year2023-day06',

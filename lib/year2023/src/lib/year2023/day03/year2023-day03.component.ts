@@ -1,9 +1,9 @@
+import { sumAll, wrapTag } from '@advent/shared';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { sumAll, wrapTag } from '../utils';
 
 interface PartNumber {
   index: number;
