@@ -3,6 +3,12 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 
+export interface NodeNetwork {
+  [name: string]: { L: string; R: string };
+}
+
+type Direction = 'L' | 'R';
+
 @Component({
   selector: 'advent-year2023-day08',
   standalone: true,
@@ -15,9 +21,47 @@ export class Year2023Day08Component {
   result2 = '';
 
   processInput(value: string): void {
-    const lines = value.split('\n');
+    const instructions = value.match(/[RL]+/)?.shift();
+    if (instructions === undefined) {
+      return;
+    }
+    const nodes = value.matchAll(
+      /([0-9A-Z]{3}) = \(([0-9A-Z]{3}), ([0-9A-Z]{3})\)/g
+    );
 
-    this.result1 = '';
-    this.result2 = '';
+    const testNodeEnd = (name: string) => name.charAt(2) === 'Z';
+    const testNodeStart = (name: string) => name.charAt(2) === 'A';
+
+    let network: NodeNetwork = {};
+    let currentNodes: string[] = [];
+    for (const [_, name, left, right] of nodes) {
+      console.log(name, left, right, testNodeStart(name));
+      if (testNodeStart(name)) currentNodes.push(name);
+      network[name] = { L: left, R: right };
+    }
+    console.log(currentNodes);
+    const allSteps: number[] = [];
+
+    for (let j = 0; j < currentNodes.length; j++) {
+      let steps = 0;
+      let i = 0;
+      let loopCount = 0;
+      console.log('every', currentNodes.every(testNodeEnd));
+      while (loopCount < 1000 && !testNodeEnd(currentNodes[j])) {
+        currentNodes[j] =
+          network[currentNodes[j]][instructions.charAt(i) as Direction];
+        i++;
+        if (i >= instructions.length) {
+          i = 0;
+          loopCount++;
+        }
+        steps++;
+      }
+      allSteps.push(steps);
+    }
+    // To be COMPLETE, find unique prime factors of each value in allSteps, then multiply them together
+
+    this.result1 = '' + allSteps.join(',');
+    this.result2 = '' + currentNodes.join(',');
   }
 }
