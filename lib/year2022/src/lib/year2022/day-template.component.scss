@@ -1,0 +1,21 @@
+mat-form-field {
+  width: 80%;
+  display: block;
+  textarea {
+    width: 100%;
+    height: 400px !important;
+  }
+}
+
+button {
+  margin-bottom: 16px;
+}
+
+::ng-deep pre {
+  b {
+    color: green;
+  }
+  i {
+    color: red;
+  }
+}

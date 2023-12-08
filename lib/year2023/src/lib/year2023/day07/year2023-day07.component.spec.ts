@@ -10,7 +10,7 @@ import {
   Year2023Day07Component,
 } from './year2023-day07.component';
 
-describe('Year2022Day07Component', () => {
+describe('Year2023Day07Component', () => {
   let component: Year2023Day07Component;
   let fixture: ComponentFixture<Year2023Day07Component>;
 

@@ -7,7 +7,7 @@ import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { TEST_CASES } from './test-cases';
 import { Year2023Day03Component } from './year2023-day03.component';
 
-describe('Day03Component', () => {
+describe('Year2023Day03Component', () => {
   let component: Year2023Day03Component;
   let fixture: ComponentFixture<Year2023Day03Component>;
 

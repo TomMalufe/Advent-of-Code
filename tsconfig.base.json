@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@advent/year2022": ["lib/year2022/src/index.ts"],
       "@advent/year2023": ["lib/year2023/src/index.ts"]
     }
   },

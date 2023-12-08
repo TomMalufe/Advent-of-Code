@@ -11,7 +11,7 @@ import {
   Year2023Day05Component,
 } from './year2023-day05.component';
 
-describe('Day05Component', () => {
+describe('Year2023Day05Component', () => {
   let component: Year2023Day05Component;
   let fixture: ComponentFixture<Year2023Day05Component>;
 

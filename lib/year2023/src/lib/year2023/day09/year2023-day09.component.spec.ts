@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { Year2023Day09Component } from './year2023-day09.component';
 
-describe('Year2022Day09Component', () => {
+describe('Year2023Day09Component', () => {
   let component: Year2023Day09Component;
   let fixture: ComponentFixture<Year2023Day09Component>;
 
