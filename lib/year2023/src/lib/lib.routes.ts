@@ -8,6 +8,7 @@ import { Year2023Day06Component } from './year2023/day06/year2023-day06.componen
 import { Year2023Day07Component } from './year2023/day07/year2023-day07.component';
 import { Year2023Day08Component } from './year2023/day08/year2023-day08.component';
 import { Year2023Day09Component } from './year2023/day09/year2023-day09.component';
+import { Year2023Day10Component } from './year2023/day10/year2023-day10.component';
 import { Year2023Component } from './year2023/year2023.component';
 
 export const year2023Routes: Route[] = [
@@ -60,6 +61,11 @@ export const year2023Routes: Route[] = [
         path: 'day09',
         component: Year2023Day09Component,
         data: { pathName: 'Year2023 - Day09' },
+      },
+      {
+        path: 'day10',
+        component: Year2023Day10Component,
+        data: { pathName: 'Year2023 - Day10' },
       },
     ],
   },
