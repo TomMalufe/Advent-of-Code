@@ -19,3 +19,5 @@ export const wrapTag = (
 export const regExToArray = (
   itt: IterableIterator<RegExpMatchArray>
 ): Array<string> => Array.from(itt, (x) => x[0]);
+
+export const lastItem = <T>(array: Array<T>): T => array[array.length - 1];
