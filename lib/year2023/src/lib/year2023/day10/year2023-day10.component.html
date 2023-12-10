@@ -1,0 +1,17 @@
+<mat-form-field>
+  <label>Puzzle Input</label>
+  <textarea matInput #input1></textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="processInput(input1.value)">
+  Submit
+</button>
+
+<div>
+  <label>Output #1</label>
+  <input disabled [value]="result1" />
+</div>
+<div>
+  <label>Output #2</label>
+  <input disabled [value]="result2" />
+</div>
+<pre [innerHTML]="visualResult"></pre>
