@@ -1,3 +1,4 @@
+import { Point } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,18 +31,37 @@ export class Year2023Day11Component extends DayTemplateComponent {
     emptyRows = emptyRows.filter((it) => it >= 0);
     emptyColumns = emptyColumns.filter((it) => it >= 0);
 
-    // expand universe width
+    const stars: Point[] = [];
     for (let row = 0; row < universe.length; row++) {
-      for (let col = emptyColumns.length - 1; col >= 0; col--) {
-        universe[row].splice(col, 0, '.');
+      for (let col = 0; col < universe[row].length; col++) {
+        if (universe[row][col] === '#') {
+          const numberOfEmptyRows = emptyRows.filter((it) => it < row).length;
+          const numberOfEmptyColumns = emptyColumns.filter(
+            (it) => it < col
+          ).length;
+          stars.push({
+            x: row + numberOfEmptyRows * 999999,
+            y: col + numberOfEmptyColumns * 999999,
+          });
+        }
       }
     }
-    // expand universe height
-    for (let row = emptyRows.length - 1; row >= 0; row--) {
-      universe.splice(row, 0, [...universe[row]]);
-    }
 
-    this.result1 = '';
+    const distancesBetween = (p1: Point, p2: Point): number =>
+      Math.abs(p1.x - p2.x) + Math.abs(p1.y - p2.y);
+    const totalDistances = stars.reduce(
+      (previousValue, p1, currentIndex, array) =>
+        previousValue +
+        array
+          .slice(currentIndex + 1)
+          .reduce(
+            (previousValue2, p2) => previousValue2 + distancesBetween(p1, p2),
+            0
+          ),
+      0
+    );
+
+    this.result1 = '' + totalDistances;
     this.result2 = '';
   }
 }

@@ -30,4 +30,20 @@ describe('Year2023Day11Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('given the test input', () => {
+    it('should add up the distances between stars', () => {
+      component.processInput(`...#......
+.......#..
+#.........
+..........
+......#...
+.#........
+.........#
+..........
+.......#..
+#...#.....`);
+      expect(component.result1).toEqual(`374`);
+    });
+  });
 });
