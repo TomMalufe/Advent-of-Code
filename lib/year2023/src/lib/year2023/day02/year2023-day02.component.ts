@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 type Color = 'red' | 'green' | 'blue';
 
@@ -25,10 +26,7 @@ interface Game {
   templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day02Component {
-  result1 = '';
-  result2 = '';
-
+export class Year2023Day02Component extends DayTemplateComponent {
   processInput(value: string): void {
     const lines = value.split('\n');
     const games = lines.map(this.parseGames);

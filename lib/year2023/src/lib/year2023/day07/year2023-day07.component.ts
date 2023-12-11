@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 type CardType =
   | 'A'
@@ -136,10 +137,7 @@ export class CamelCardHand {
   templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day07Component {
-  result1 = '';
-  result2 = '';
-
+export class Year2023Day07Component extends DayTemplateComponent {
   processInput(value: string): void {
     const matches = value.matchAll(/([2-9AKQJT]{5}) (\d+)/g);
 

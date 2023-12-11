@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 @Component({
   selector: 'advent-year2023-day01',
@@ -11,10 +12,7 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day01Component {
-  result1 = '';
-  result2 = '';
-
+export class Year2023Day01Component extends DayTemplateComponent {
   static NUMBERS = [
     'zero',
     'one',

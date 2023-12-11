@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 export enum Directions {
   UP = 'UP',
@@ -53,14 +54,10 @@ export interface MetalPipe {
   selector: 'advent-year2023-day10',
   standalone: true,
   imports: [CommonModule, MatInputModule, MatButtonModule],
-  templateUrl: './year2023-day10.component.html',
+  templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day10Component {
-  result1 = '';
-  result2 = '';
-  visualResult = '';
-
+export class Year2023Day10Component extends DayTemplateComponent {
   processInput(value: string): void {
     const lines = value.split('\n');
 

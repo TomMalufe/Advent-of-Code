@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 class Sequence {
   private _sequenceSteps: number[][] = [];
@@ -59,10 +60,7 @@ class Sequence {
   templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day09Component {
-  result1 = '';
-  result2 = '';
-
+export class Year2023Day09Component extends DayTemplateComponent {
   processInput(value: string): void {
     const lines = value.split('\n');
 

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 export interface NodeNetwork {
   [name: string]: { L: string; R: string };
@@ -16,10 +17,7 @@ type Direction = 'L' | 'R';
   templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day08Component {
-  result1 = '';
-  result2 = '';
-
+export class Year2023Day08Component extends DayTemplateComponent {
   processInput(value: string): void {
     const instructions = value.match(/[RL]+/)?.shift();
     if (instructions === undefined) {

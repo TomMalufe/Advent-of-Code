@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DayTemplateComponent } from '../day-template.component';
 
 interface Card {
   id: number;
@@ -20,10 +21,7 @@ interface Card {
   templateUrl: '../day-template.component.html',
   styleUrl: '../day-template.component.scss',
 })
-export class Year2023Day04Component {
-  result1 = '';
-  result2 = '';
-
+export class Year2023Day04Component extends DayTemplateComponent {
   processInput(value: string): void {
     const lines = value.split('\n');
 
