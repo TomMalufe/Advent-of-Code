@@ -53,13 +53,14 @@ const components = [
   Year2023Day24Component,
   Year2023Day25Component,
 ];
+const day = new Date().getDate().toString().padStart(2, '0');
 
 export const year2023Routes: Route[] = [
   {
     path: '',
     component: Year2023Component,
     children: [
-      { path: '', redirectTo: 'day01', pathMatch: 'full' },
+      { path: '', redirectTo: 'day' + day, pathMatch: 'full' },
       ...components.map((component, index) => {
         const dayNumber = (index + 1).toString().padStart(2, '0');
         return {
