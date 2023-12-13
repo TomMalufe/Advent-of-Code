@@ -22,7 +22,6 @@ export class Year2023Day12Component extends DayTemplateComponent {
 
     this.result1 = '' + sumAll(counts);
     this.result2 = '' + sumAll(countsV2);
-    console.log(Date.now() - start);
   }
 
   countArrangements(line: string): number {
@@ -60,8 +59,8 @@ export class Year2023Day12Component extends DayTemplateComponent {
 
   countArrangementsV2(line: string): number {
     const [springs, brokenString] = line.split(' ');
-    const unfoldedSprings = [0, 1, 2, 3, 4].map(() => springs).join('?');
-    const groupSizes = [0, 1, 2, 3, 4]
+    const unfoldedSprings = [1, 2, 3, 4, 5].map(() => springs).join('?');
+    const groupSizes = [1, 2, 3, 4, 5]
       .map(() => brokenString)
       .join(',')
       .split(',')
