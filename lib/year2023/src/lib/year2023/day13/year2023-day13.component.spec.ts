@@ -30,4 +30,97 @@ describe('Year2023Day13Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('Part 1 tests', () => {
+    it('given the first test pattern', () => {
+      component.processInput(`#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.`);
+      expect(component.result1).toEqual('300');
+    });
+    it('given the second test pattern', () => {
+      component.processInput(`#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#`);
+      expect(component.result1).toEqual('100');
+    });
+    it('given the full test pattern', () => {
+      component.processInput(`#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#`);
+      expect(component.result1).toEqual('400');
+    });
+    it('given a real input pattern', () => {
+      component.processInput(`..#....#.
+..######.
+..###.##.
+####..###
+...####..
+###.##.##
+##.####.#
+...#..#..
+..######.`);
+      expect(component.result1).toEqual('5');
+    });
+    it('given a real pattern that previously failed', () => {
+      component.processInput(`#..#.##.#..
+###.####.##
+###.####.##
+###.####.##
+###.####.##
+#..#.##.#..
+.#..#..#..#
+..#.####.#.
+####....###
+..#......#.
+.#.........
+#...#..#...
+####....###
+.##......##
+#...####...
+###.#..#.##
+#.########.`);
+      expect(component.result1).toEqual('6');
+    });
+    it('given another real pattern that previously failed', () => {
+      component.processInput(`##.##....##...#
+.####....####..
+#####....####..
+#...####.#.....
+#..##..####...#
+#..##......##..
+.##...##..#..##
+#.#...#.#.#..##
+..##.#..####...
+..##.#..####...
+#.#...#.#.#..##
+.##...##..#..##
+#..##......##..
+#..##..####...#
+#...####.#.....
+#####....####..
+.####....####..`);
+      expect(component.result1).toEqual('1600');
+    });
+  });
 });
