@@ -30,4 +30,17 @@ describe('Year2023Day15Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('Part 1 tests', () => {
+    it('should find HASH equal to 52', () => {
+      component.processInput('HASH');
+      expect(component.result1).toEqual('52');
+    });
+    it('should get the correct result from the test input', () => {
+      component.processInput(
+        'rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7'
+      );
+      expect(component.result1).toEqual('1320');
+    });
+  });
 });
