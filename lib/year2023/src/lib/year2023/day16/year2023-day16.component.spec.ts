@@ -30,4 +30,22 @@ describe('Year2023Day16Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('Part 1', () => {
+    it('should give correct result from example input', () => {
+      component.processInput(
+        String.raw`.|...\....
+|.-.\.....
+.....|-...
+........|.
+..........
+.........\
+..../.\\..
+.-.-/..|..
+.|....-|.\
+..//.|....`
+      );
+      expect(component.result1).toEqual('46');
+    });
+  });
 });
