@@ -1,6 +1,6 @@
 <mat-form-field>
   <label>Puzzle Input</label>
-  <textarea matInput #input1></textarea>
+  <textarea matInput #input1 [value]="defaultInput"></textarea>
 </mat-form-field>
 <button mat-raised-button color="primary" (click)="processInput(input1.value)">
   Submit
