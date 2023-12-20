@@ -28,6 +28,10 @@ export const addPoints = (p1: Point, p2: Point): Point => ({
   x: p1.x + p2.x,
   y: p1.y + p2.y,
 });
+export const multiplyPoint = (p1: Point, times: number): Point => ({
+  x: p1.x * times,
+  y: p1.y * times,
+});
 export const isOutOfBounds = (
   point: Point,
   width: number,
